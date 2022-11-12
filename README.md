@@ -120,7 +120,7 @@ tshark -T jsonraw -j "http tcp ip" -x -r fish_hunting
 #
 # Wireshark - Network traffic analyzer
 # By Gerald Combs <gerald [AT] wireshark.org>
-# Copyright 1998 Gerald Combstshark  -z smb,srt -V -T text
+# Copyright 1998 Gerald Combs
 #
 # SPDX-License-Identifier: GPL-2.0-or-later
 #
@@ -401,22 +401,22 @@ https://wiki.wireshark.org/SampleCaptures
 (02:39:29)-[wuseman@w] ~ $ tshark -v
 TShark (Wireshark) 4.0.1 (Git commit e9f3970b1527).
 
-Copyright 1998-2022 Gerald Combtshark  -z smb,srt -V -T texts <gerald@wireshark.org> and contributors.
+Copyright 1998-2022 Gerald Comb <gerald@wireshark.org> and contributors.
 Licensed under the terms of the GNU General Public License (version 2 or later).
 This is free software; see the file named COPYING in the distribution. There is
 NO WARRANTY; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-Compiled (64-bit) using GCC 11.3.0, with GLib 2.74.1, with PCRE2, with zlib
-1.2.13, with libpcap, with POSIX capabilities (Linux), with libnl 3, without
-Lua, with GnuTLS 3.7.8, with Gcrypt 1.10.1-unknown, without Kerberos, without
-MaxMind, without nghttp2, without brotli, without LZ4, with Zstandard, without
-Snappy, without libxml2, without libsmi, with binary plugins.
+Compiled (64-bit) using `GCC 11.3.0`, with `GLib 2.74.1`, with PCRE2, with zlib
+`1.2.13`, with libpcap, with `POSIX` capabilities (`Linux`), with `libnl 3`, without
+`Lua`, with `GnuTLS 3.7.8`, with `Gcrypt 1.10.1-unknown`, without `Kerberos`, without
+`MaxMind`, without `nghttp2`, without `brotli`, without `LZ`4, with `Zstandard`, without
+`Snappy`, without `libxml2`, without `libsmi`, with binary plugins.
 
-Running on Linux 5.10.144-gentoo-x86_64, with Intel(R) Core(TM) i5-9500T CPU @
-2.20GHz (with SSE4.2), with 31316 MB of physical memory, with GLib 2.74.1, with
-PCRE2 10.40 2022-04-14, with zlib 1.2.13, with libpcap 1.10.1 (with TPACKET_V3),
-with c-ares 1.18.1, with GnuTLS 3.7.8, with Gcrypt 1.10.1-unknown, with
-Zstandard 1.5.2, with LC_TYPE=en_US.utf8, binary plugins supported.
+Running on `Linux 5.10.144-gentoo-x86_64`, with `Intel(R) Core(TM) i5-9500T CPU @
+2.20GHz` (with `SSE4.2`), with `31316MB` of physical memory, with `GLib 2.74.1`, with
+`PCRE2 10.40 2022-04-14`, with `zlib 1.2.13`, with `libpcap 1.10.1` (with `TPACKET_V3`),
+with `c-ares 1.18.1`, with `GnuTLS 3.7.8`, with `Gcrypt 1.10.1-unknown`, with
+`Zstandard 1.5.2`, with `LC_TYPE=en_US.utf8`, binary plugins supported.
 ```
 
 ### Shorter example for version
@@ -425,6 +425,57 @@ Zstandard 1.5.2, with LC_TYPE=en_US.utf8, binary plugins supported.
 tshark --version|head -n1
 TShark (Wireshark) 4.0.1 (Git commit e9f3970b1527).
 ```
+
+### My personal install
+
+![tshark](https://user-images.githubusercontent.com/26827453/201454078-e5c19d46-325b-4854-8f33-32c436720d7b.png)
+
+### Gentoo Useflags(Description)
+
+|section/package[useflag] | useFlag Desription | 
+|--------------------------|--------------| 
+|app-emulation/crossover-bin[pcap] |  Support packet capture software (e.g. wireshark) |
+|app-emulation/libvirt[wireshark-plugins] |  Build the net-analyzer/wireshark plugin for the Libvirt RPC protocol |
+|app-emulation/wine-staging[pcap] |  Support packet capture software (e.g. wireshark) |
+|app-emulation/wine-vanilla[pcap]|  Support packet capture software (e.g. wireshark) |
+|net-analyzer/wireshark[androiddump] |  Install androiddump, an extcap interface to capture from Android devices |
+|net-analyzer/wireshark[bcg729| ] Use media-libs/bcg729 for G.729 codec support in RTP Player |
+|net-analyzer/wireshark[brotli] |  Use app-arch/brotli for compression/decompression |
+|net-analyzer/wireshark[capinfos] |  Install capinfos, to print information about capture files |
+|net-analyzer/wireshark[captype] |  Install captype, to print the file types of capture files |
+|net-analyzer/wireshark[ciscodump] |  Install ciscodump, extcap interface to capture from a remote Cisco router |
+|net-analyzer/wireshark[dftest] |  Install dftest, to display filter byte-code, for debugging dfilter routines |
+|net-analyzer/wireshark[dpauxmon] |  Install dpauxmon, an external capture interface (extcap) that captures DisplayPort AUX channel data |
+|net-analyzer/wireshark[dumpcap] |  Install dumpcap, to dump network traffic from inside wireshark |
+|net-analyzer/wireshark[editcap] |  Install editcap, to edit and/or translate the format of capture files |
+|net-analyzer/wireshark[http2] |  Use net-libs/nghttp2 for HTTP/2 support |
+|net-analyzer/wireshark[ilbc] |  Build with iLBC support in RTP Player using media-libs/libilbc |
+|net-analyzer/wireshark[libxml2] |  Use dev-libs/libxml2 for handling XML configuration in dissectors |
+|net-analyzer/wireshark[lto] |  Enable link time optimization |
+|net-analyzer/wireshark[maxminddb] |  Use dev-libs/libmaxminddb for IP address geolocation |
+|net-analyzer/wireshark[mergecap] |  Install mergecap, to merge two or more capture files into one |
+|net-analyzer/wireshark[minizip] |  Build with zip file compression support |
+|net-analyzer/wireshark[netlink] |  Use dev-libs/libnl |
+|net-analyzer/wireshark[pcap] |  Use net-libs/libpcap for network packet capturing (build dumpcap, rawshark) |
+|net-analyzer/wireshark[plugin-ifdemo] |  Install plugin interface demo |
+|net-analyzer/wireshark[plugins] |  Install plugins |
+|net-analyzer/wireshark[qt6] |  Build with Qt6 support instead of the default Qt5 for GUI support |
+|net-analyzer/wireshark[randpkt] |  Install randpkt, a utility for creating pcap trace files full of random packets |
+|net-analyzer/wireshark[randpktdump] |  Install randpktdump, an extcap interface to provide access to the random packet generator (randpkt) |
+|net-analyzer/wireshark[reordercap] |  Install reordercap, to reorder input file by timestamp into output file |
+|net-analyzer/wireshark[sbc] | Use media-libs/sbc for playing back SBC encoded packets |
+|net-analyzer/wireshark[sdjournal] |  Install sdjournal, an extcap that captures systemd journal entries |
+|net-analyzer/wireshark[sharkd] |  Install sharkd, the daemon variant of wireshark |
+|net-analyzer/wireshark[spandsp] | Use media-libs/spandsp for for G.722 and G.726 codec support in the RTP Player |
+|net-analyzer/wireshark[smi] | Use net-libs/libsmi to resolve numeric OIDs into human readable format |
+|net-analyzer/wireshark[spandsp] | Use media-libs/spandsp for for G.722 and G.726 codec support in the RTP Player |
+|net-analyzer/wireshark[sshdump] | Install sshdump, an extcap interface to capture from a remote host through SSH |
+|net-analyzer/wireshark[text2pcap] | Install text2pcap, to generate a capture file from an ASCII hexdump of packets |
+|net-analyzer/wireshark[tfshark] | Install tfshark, a terminal-based version of the FileShark capability |
+|net-analyzer/wireshark[tshark] | Install tshark, to dump and analyzer network traffic from the command line |
+|net-analyzer/wireshark[udpdump] | Install udpdump, to get packets exported from a source (like a network device or a GSMTAP producer) that are dumped to a pcap file |
+|net-analyzer/wireshark[wifi]  | Install wifidump, to dump and analyse 802.11 traffic |
+
 
  
 ### Display the contents of the second TCP stream (the first is stream 0) in "hex" format.
