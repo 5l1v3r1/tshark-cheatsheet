@@ -430,7 +430,7 @@ TShark (Wireshark) 4.0.1 (Git commit e9f3970b1527).
 
 ![tshark](https://user-images.githubusercontent.com/26827453/201454078-e5c19d46-325b-4854-8f33-32c436720d7b.png)
 
-### Gentoo Useflags(Description)
+### Gentoo Useflags(Description) 
 
 |section/package[useflag] | useFlag Desription | 
 |--------------------------|--------------| 
