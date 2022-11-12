@@ -1,6 +1,7 @@
-# Hunting Real Fish with tshark
-
-## Install/Configure tshark
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/26827453/201454751-c8ccad1a-882f-4f73-b731-b9549892fd4b.png" />
+  <h2 align="center"># Hunting Fish with tshark</h2>
+</p>
 
 ### Make Sure Utilities are on $PATH
 
