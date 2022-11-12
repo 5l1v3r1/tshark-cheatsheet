@@ -486,12 +486,11 @@ F       Status Code     http.response.code      FT_UINT16       http    BASE_DEC
 F       Status Code Description http.response.code.desc FT_STRING       http            0x0     HTTP Response Status Code Description
 F       Response Phrase http.response.phrase    FT_STRING       http            0x0     HTTP Response Reason Phrase
 ```
-
-
 ### If you’re looking for any frames that match an OUI `00:91:e1`, there are a couple ways of doing this.
 
-* [Source](https://tshark.dev/analyze/packet_hunting/packet_hunting/)
+* [Source - Packet hunting](https://tshark.dev/analyze/packet_hunting/packet_hunting/)
 
+```bash
 tshark -r $file -Y "eth.addr contains 00:91:e1"
 tshark -r $file -Y "eth.addr[0:3] == 00:91:e1"
 tshark -r $file -Y "eth.addr matches \"^[^\x01-\xff]\x16\xe3
@@ -499,21 +498,23 @@ tshark -r $file -Y "eth.addr matches \"^[^\x01-\xff]\x16\xe3
 
 ### Search for a URL with regex
 
-```
+```bash
 tshark -r hunting_fish.pcap -Y "frame matches \"https?.*?\.ru.*?worm\""
 ```
 
 ### The following tshark command captures 500 network packets and then stop
-
+```bash
 tshark -i any -c 500
-
+```
+  
 ### Exporting Data
+  
 Imagine you want to extract the frame number, the relative time of the frame,
 he source IP address, the destination IP address, the protocol of the packet 
 and the length of the network packet from previously captured network traffic. 
 
-The -E header=y option tells tshark first to print a header line. The -E quote=n dictates that 
-tshark not include the data in quotes, and the -E occurrence=f tells tshark to use only the 
+The `-E header=y` option tells tshark first to print a header line. The `-E quote=n` dictates that 
+tshark not include the data in quotes, and the `-E occurrence=f` tells tshark to use only the 
 first occurrence for fields that have multiple occurrences.
 
 
@@ -524,8 +525,8 @@ tshark -r hunting_newbies.tcpdump -T fields -e frame.number -e
     quote=n -E occurrence=f
 ```
 
-Having plain text as output means that you easily can process it the UNIX way.
-The following command shows the ten most popular IPs using input from the ip.src field:
+Having plain text as output means that you easily can process it the `UNIX`way.
+The following command shows the ten most popular IPs using input from the `ip.src field`:
 
 ```bash
  tshark -r ~/netData.pcap -T fields -e ip.src | sort 
